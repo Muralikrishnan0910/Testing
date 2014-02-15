@@ -48,6 +48,7 @@
     self.booknameLabel.text=self.selectedbook.bookname;
     self.authornameLabel.text=self.selectedbook.authorname;
     self.totalpagesLabel.text=self.selectedbook.totalpages;
+    
     NSArray* psread=[self.selectedbook.updatepage allObjects];
     self.pagesreadTextfield.text=((UpdatePage*)[psread objectAtIndex:0]).pagesread;
     

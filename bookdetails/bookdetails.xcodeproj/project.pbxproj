@@ -27,6 +27,7 @@
 		0E048AC418ACF39F000EC732 /* BookDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AC318ACF39F000EC732 /* BookDetails.m */; };
 		0E048AC718ACF39F000EC732 /* UpdatePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AC618ACF39F000EC732 /* UpdatePage.m */; };
 		0E048ACA18AD0664000EC732 /* BookRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AC918AD0664000EC732 /* BookRecordViewController.m */; };
+		0E9A053F18AF8D4C0084A478 /* pickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A053E18AF8D4C0084A478 /* pickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		0E048AC618ACF39F000EC732 /* UpdatePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePage.m; sourceTree = "<group>"; };
 		0E048AC818AD0664000EC732 /* BookRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRecordViewController.h; sourceTree = "<group>"; };
 		0E048AC918AD0664000EC732 /* BookRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRecordViewController.m; sourceTree = "<group>"; };
+		0E9A053D18AF8D4C0084A478 /* pickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickerViewController.h; sourceTree = "<group>"; };
+		0E9A053E18AF8D4C0084A478 /* pickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				0E048AB318ACD05B000EC732 /* Addbooks.xcdatamodeld */,
+				0E048A8B18ACCAC0000EC732 /* Main.storyboard */,
 				0E048AC518ACF39F000EC732 /* UpdatePage.h */,
 				0E048AC618ACF39F000EC732 /* UpdatePage.m */,
 				0E048AC218ACF39F000EC732 /* BookDetails.h */,
@@ -137,7 +141,6 @@
 			children = (
 				0E048A8818ACCAC0000EC732 /* AppDelegate.h */,
 				0E048A8918ACCAC0000EC732 /* AppDelegate.m */,
-				0E048A8B18ACCAC0000EC732 /* Main.storyboard */,
 				0E048A8E18ACCAC0000EC732 /* ViewController.h */,
 				0E048A8F18ACCAC0000EC732 /* ViewController.m */,
 				0E048A9118ACCAC0000EC732 /* Images.xcassets */,
@@ -145,6 +148,8 @@
 				0E048AAF18ACCEF1000EC732 /* BookTableViewController.m */,
 				0E048AC818AD0664000EC732 /* BookRecordViewController.h */,
 				0E048AC918AD0664000EC732 /* BookRecordViewController.m */,
+				0E9A053D18AF8D4C0084A478 /* pickerViewController.h */,
+				0E9A053E18AF8D4C0084A478 /* pickerViewController.m */,
 				0E048A8018ACCAC0000EC732 /* Supporting Files */,
 			);
 			path = bookdetails;
@@ -284,6 +289,7 @@
 				0E048A8618ACCAC0000EC732 /* main.m in Sources */,
 				0E048ACA18AD0664000EC732 /* BookRecordViewController.m in Sources */,
 				0E048AC418ACF39F000EC732 /* BookDetails.m in Sources */,
+				0E9A053F18AF8D4C0084A478 /* pickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +326,7 @@
 				0E048A8C18ACCAC0000EC732 /* Base */,
 			);
 			name = Main.storyboard;
+			path = bookdetails;
 			sourceTree = "<group>";
 		};
 		0E048AA118ACCAC0000EC732 /* InfoPlist.strings */ = {
@@ -492,6 +499,7 @@
 				0E048AAA18ACCAC0000EC732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E048AAB18ACCAC0000EC732 /* Build configuration list for PBXNativeTarget "bookdetailsTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +508,7 @@
 				0E048AAD18ACCAC0000EC732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
