@@ -12,13 +12,16 @@
 #import "BookRecordViewController.h"
 #import "UpdatePage.h"
 
-@interface pickerViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
 
+
+@interface pickerViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIActionSheetDelegate>
+
+- (IBAction)selectbookButton:(id)sender;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 // Core Data
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property(weak,nonatomic)UIActionSheet *dataselectactionsheet;
-@property(weak,nonatomic)UIPickerView *datapick;
+@property(strong,nonatomic)UIActionSheet *dataselectactionsheet;
+@property(retain,nonatomic)UIPickerView *datapick;
 @property(nonatomic,strong)BookDetails *selectedbook;
 
 - (IBAction)booklistButton:(id)sender;

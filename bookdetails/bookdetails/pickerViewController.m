@@ -56,6 +56,44 @@
     self.pagereadTextfield.delegate=self;
     [self initialSetup];
     
+    dataselectactionsheet=[[UIActionSheet alloc] initWithTitle:@"Select Book"
+                                                      delegate:self
+                                             cancelButtonTitle:nil
+                                        destructiveButtonTitle:nil
+                                             otherButtonTitles:nil];
+    datapick=[[UIPickerView alloc]initWithFrame:CGRectMake(0.0, 44.0, 0.0, 0.0)];
+    [self.datapick setDelegate:self];
+    UIToolbar *pickerDateToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    
+    pickerDateToolbar.barStyle = UIBarStyleBlackOpaque;
+    [pickerDateToolbar sizeToFit];
+    
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    
+    UIBarButtonItem *cancelbtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+    [barItems addObject:cancelbtn];
+    
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    
+    
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(bookPickerDoneClick:)];
+    [barItems addObject:doneBtn];
+
+    [pickerDateToolbar setItems:barItems animated:YES];
+    
+    [self.dataselectactionsheet addSubview:pickerDateToolbar];
+    [self.dataselectactionsheet addSubview:self.datapick];
+
+}
+-(void)cancel:(id)sender{
+    
+    
+    [self.dataselectactionsheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+-(void)bookPickerDoneClick:(id)sender{
+    
+    [self.dataselectactionsheet dismissWithClickedButtonIndex:1 animated:YES];
 }
 - (void)initialSetup
 {
@@ -85,6 +123,8 @@
     }
     //  3
     [self.navigationController popViewControllerAnimated:YES];
+    
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -102,11 +142,13 @@
 
 - (IBAction)doneButton:(id)sender
 {
+    //1
     NSArray* pgnum=[self.selectedbook.updatepage allObjects];
     ((UpdatePage*)[pgnum objectAtIndex:0]).pagesread=self.pagereadTextfield.text;
     //  2
     NSError *error;
-    if (![self.managedObjectContext save:&error]) {
+    if (![self.managedObjectContext save:&error])
+    {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
 
@@ -134,11 +176,19 @@
     pagereadTextfield.text=[NSString stringWithFormat:@"%@",pageno1.pagesread];
     
 }
-
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [self. reloadInputViews];
+//}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     return [textField resignFirstResponder];
     
+}
+- (IBAction)selectbookButton:(id)sender
+{
+    [self.dataselectactionsheet showInView:self.view];
+    [self.dataselectactionsheet setBounds:CGRectMake(0,0,320, 464)];
 }
 @end
