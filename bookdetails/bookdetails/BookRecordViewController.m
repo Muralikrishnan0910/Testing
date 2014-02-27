@@ -7,11 +7,12 @@
 //
 
 #import "BookRecordViewController.h"
-#import "UpdatePage.h"
 #import "AppDelegate.h"
+
 
 @interface BookRecordViewController ()
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation BookRecordViewController
@@ -42,27 +43,17 @@
 }
 - (void)initialSetup
 {
-//    self.booknameTextfield.text=self.selectedbook.bookname;
-//    self.authornameTextfield.text=self.selectedbook.authorname;
-//    self.totalpagesTextfield.text=self.selectedbook.totalpages;
     self.booknameLabel.text=self.selectedbook.bookname;
     self.authornameLabel.text=self.selectedbook.authorname;
     self.totalpagesLabel.text=self.selectedbook.totalpages;
-    
-    NSArray* psread=[self.selectedbook.updatepage allObjects];
-    self.pagesreadTextfield.text=((UpdatePage*)[psread objectAtIndex:0]).pagesread;
+    self.pagesreadTextfield.text=self.selectedbook.pagesread;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:self.editButtonItem.style                                                             target:self action:@selector(doneButtonPressed)];
 }
 - (void)doneButtonPressed
 {
-//    self.selectedbook.bookname=self.booknameTextfield.text;
-//    self.selectedbook.authorname=self.authornameTextfield.text;
-//    self.selectedbook.totalpages=self.totalpagesTextfield.text;
-    
-    NSArray* pgnum=[self.selectedbook.updatepage allObjects];
-    ((UpdatePage*)[pgnum objectAtIndex:0]).pagesread=self.pagesreadTextfield.text;
-    //  2
+
+    self.selectedbook.pagesread=self.pagesreadTextfield.text;
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);

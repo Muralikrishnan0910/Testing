@@ -113,7 +113,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="addbookButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HJ5-g3-cJe"/>
+                                    <action selector="addbookButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a4g-Pf-mU7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of Pages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ano-cZ-zLl">
@@ -160,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNS-t7-O1K">
-                                <rect key="frame" x="137" y="448" width="51" height="30"/>
+                                <rect key="frame" x="249" y="33" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Update">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,7 +170,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRN-Ph-Gg6">
-                                <rect key="frame" x="215" y="33" width="36" height="30"/>
+                                <rect key="frame" x="183" y="33" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Front">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="72"/>
+            <point key="canvasLocation" x="-108" y="92"/>
         </scene>
         <!--Picker View Controller-->
         <scene sceneID="8y7-ch-j6s">
@@ -284,7 +284,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ner-qN-L93"/>
+                    <navigationItem key="navigationItem" id="Ner-qN-L93">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="dyz-H7-5ij">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="modal" id="9yO-Nb-VqV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="gnB-mo-asc">
+                            <connections>
+                                <action selector="doneButton:" destination="ccF-JI-ATm" id="91D-AT-OXH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authornameLabel" destination="mNf-5P-sPr" id="eOO-SU-Qck"/>
                         <outlet property="booknameLabel" destination="hgy-FP-Aw7" id="NGF-1y-24C"/>
@@ -327,35 +338,54 @@
                                     <outlet property="delegate" destination="71L-oc-oTm" id="7bD-5t-sQJ"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dv3-Lu-TJS">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dv3-Lu-TJS">
                                 <rect key="frame" x="79" y="108" width="163" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Completed"/>
                                     <segment title="Reading"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentUpdate:" destination="71L-oc-oTm" eventType="valueChanged" id="7Mh-o0-YVU"/>
+                                </connections>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXe-M3-SWa">
-                                <rect key="frame" x="128" y="239" width="64" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXe-M3-SWa">
+                                <rect key="frame" x="90" y="240" width="141" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLs-yk-qhI">
-                                <rect key="frame" x="0.0" y="33" width="320" height="44"/>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d72-Q5-Dkw">
+                                <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="71L-oc-oTm" id="bfj-8V-nNK"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yug-eB-woQ"/>
                     <connections>
-                        <outlet property="tableView" destination="4fG-pT-8jA" id="klc-9Z-85u"/>
+                        <outlet property="searchBar" destination="d72-Q5-Dkw" id="vlg-kJ-rSJ"/>
+                        <outlet property="searchDisplayController" destination="1Y2-vc-1J8" id="nfD-X9-wBa"/>
+                        <outlet property="segControl" destination="dv3-Lu-TJS" id="dzR-Zg-enN"/>
+                        <outlet property="tableView" destination="4fG-pT-8jA" id="iiK-ST-0gB"/>
+                        <outlet property="uilabel" destination="PXe-M3-SWa" id="FMs-Lp-Xey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-5B-ij3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="1Y2-vc-1J8">
+                    <connections>
+                        <outlet property="delegate" destination="71L-oc-oTm" id="y0K-KR-vME"/>
+                        <outlet property="searchBar" destination="d72-Q5-Dkw" id="3uH-lM-DMW"/>
+                        <outlet property="searchContentsController" destination="71L-oc-oTm" id="OFC-ab-zti"/>
+                        <outlet property="searchResultsDataSource" destination="71L-oc-oTm" id="INc-xf-QhZ"/>
+                        <outlet property="searchResultsDelegate" destination="71L-oc-oTm" id="ihO-DW-5k9"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-108" y="766"/>
         </scene>
@@ -507,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcX-Vb-Paq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="47"/>
+            <point key="canvasLocation" x="1440" y="-128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jbS-es-0UC">

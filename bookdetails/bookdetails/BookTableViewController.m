@@ -8,7 +8,6 @@
 
 #import "BookTableViewController.h"
 #import "BookDetails.h"
-#import "UpdatePage.h"
 #import "AppDelegate.h"
 #import "BookRecordViewController.h"
 
@@ -76,9 +75,7 @@
     cell.textLabel.text=[NSString stringWithFormat:@"Book-%@,Author-%@ Total Pages-%@",bookdet.bookname,bookdet.authorname,bookdet.totalpages];
     // Configure the cell...
     
-    UpdatePage *pageno1=(UpdatePage*)[[bookdet.updatepage allObjects ]objectAtIndex:0];
-    
-    cell.detailTextLabel.text=[NSString stringWithFormat:@"Pages Reads-%@",pageno1.pagesread];
+    cell.detailTextLabel.text=[NSString stringWithFormat:@"Pages Reads-%@",bookdet.pagesread];
     
     return cell;
 }

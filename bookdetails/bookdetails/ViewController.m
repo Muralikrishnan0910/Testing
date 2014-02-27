@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "BookDetails.h"
-#import "UpdatePage.h"
 #import "AppDelegate.h"
 
 @interface ViewController ()
@@ -50,12 +49,7 @@
     newentry.bookname=self.booknameTextfield.text;
     newentry.authorname=self.authornameTextfield.text;
     newentry.totalpages=self.totalpageTextfield.text;
-    
-    UpdatePage *pageno=[NSEntityDescription insertNewObjectForEntityForName:@"UpdatePage" inManagedObjectContext:self.managedObjectContext];
-    
-    pageno.pagesread=self.pagesreadTextfield.text;
-    
-    newentry.updatepage=[NSSet setWithObject:pageno];
+    newentry.pagesread=self.pagesreadTextfield.text;
     
     NSError *error;
     if (![self.managedObjectContext save:&error])

@@ -24,9 +24,8 @@
 		0E048AB018ACCEF1000EC732 /* BookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AAF18ACCEF1000EC732 /* BookTableViewController.m */; };
 		0E048AB218ACD015000EC732 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E048AB118ACD015000EC732 /* CoreData.framework */; };
 		0E048AB518ACD05B000EC732 /* Addbooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AB318ACD05B000EC732 /* Addbooks.xcdatamodeld */; };
-		0E048AC418ACF39F000EC732 /* BookDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AC318ACF39F000EC732 /* BookDetails.m */; };
-		0E048AC718ACF39F000EC732 /* UpdatePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AC618ACF39F000EC732 /* UpdatePage.m */; };
 		0E048ACA18AD0664000EC732 /* BookRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E048AC918AD0664000EC732 /* BookRecordViewController.m */; };
+		0E0A45B718B655A800EAD9A0 /* BookDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0A45B618B655A800EAD9A0 /* BookDetails.m */; };
 		0E9A053F18AF8D4C0084A478 /* pickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A053E18AF8D4C0084A478 /* pickerViewController.m */; };
 		0EED577218B2351000CFFB3D /* Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EED577118B2351000CFFB3D /* Custom.m */; };
 		0EED577B18B239B200CFFB3D /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EED577A18B239B200CFFB3D /* MainController.m */; };
@@ -67,12 +66,10 @@
 		0E048AAF18ACCEF1000EC732 /* BookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewController.m; sourceTree = "<group>"; };
 		0E048AB118ACD015000EC732 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0E048AB418ACD05B000EC732 /* Addbooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Addbooks.xcdatamodel; sourceTree = "<group>"; };
-		0E048AC218ACF39F000EC732 /* BookDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetails.h; sourceTree = "<group>"; };
-		0E048AC318ACF39F000EC732 /* BookDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetails.m; sourceTree = "<group>"; };
-		0E048AC518ACF39F000EC732 /* UpdatePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePage.h; sourceTree = "<group>"; };
-		0E048AC618ACF39F000EC732 /* UpdatePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePage.m; sourceTree = "<group>"; };
 		0E048AC818AD0664000EC732 /* BookRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRecordViewController.h; sourceTree = "<group>"; };
 		0E048AC918AD0664000EC732 /* BookRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRecordViewController.m; sourceTree = "<group>"; };
+		0E0A45B518B655A800EAD9A0 /* BookDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetails.h; sourceTree = "<group>"; };
+		0E0A45B618B655A800EAD9A0 /* BookDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetails.m; path = ../BookDetails.m; sourceTree = "<group>"; };
 		0E9A053D18AF8D4C0084A478 /* pickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickerViewController.h; sourceTree = "<group>"; };
 		0E9A053E18AF8D4C0084A478 /* pickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickerViewController.m; sourceTree = "<group>"; };
 		0EED577018B2351000CFFB3D /* Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Custom.h; path = ../Custom.h; sourceTree = "<group>"; };
@@ -111,12 +108,9 @@
 		0E048A6D18ACCAC0000EC732 = {
 			isa = PBXGroup;
 			children = (
+				0E0A45B518B655A800EAD9A0 /* BookDetails.h */,
 				0E048AB318ACD05B000EC732 /* Addbooks.xcdatamodeld */,
 				0E048A8B18ACCAC0000EC732 /* Main.storyboard */,
-				0E048AC518ACF39F000EC732 /* UpdatePage.h */,
-				0E048AC618ACF39F000EC732 /* UpdatePage.m */,
-				0E048AC218ACF39F000EC732 /* BookDetails.h */,
-				0E048AC318ACF39F000EC732 /* BookDetails.m */,
 				0E048A7F18ACCAC0000EC732 /* bookdetails */,
 				0E048A9E18ACCAC0000EC732 /* bookdetailsTests */,
 				0E048A7818ACCAC0000EC732 /* Frameworks */,
@@ -151,6 +145,7 @@
 				0E048A8818ACCAC0000EC732 /* AppDelegate.h */,
 				0E048A8918ACCAC0000EC732 /* AppDelegate.m */,
 				0E048A8E18ACCAC0000EC732 /* ViewController.h */,
+				0E0A45B618B655A800EAD9A0 /* BookDetails.m */,
 				0E048A8F18ACCAC0000EC732 /* ViewController.m */,
 				0E048A9118ACCAC0000EC732 /* Images.xcassets */,
 				0E048AAE18ACCEF1000EC732 /* BookTableViewController.h */,
@@ -301,12 +296,11 @@
 				0E048A8A18ACCAC0000EC732 /* AppDelegate.m in Sources */,
 				0EED577B18B239B200CFFB3D /* MainController.m in Sources */,
 				0E048AB518ACD05B000EC732 /* Addbooks.xcdatamodeld in Sources */,
-				0E048AC718ACF39F000EC732 /* UpdatePage.m in Sources */,
+				0E0A45B718B655A800EAD9A0 /* BookDetails.m in Sources */,
 				0EED577218B2351000CFFB3D /* Custom.m in Sources */,
 				0E048AB018ACCEF1000EC732 /* BookTableViewController.m in Sources */,
 				0E048A8618ACCAC0000EC732 /* main.m in Sources */,
 				0E048ACA18AD0664000EC732 /* BookRecordViewController.m in Sources */,
-				0E048AC418ACF39F000EC732 /* BookDetails.m in Sources */,
 				0E9A053F18AF8D4C0084A478 /* pickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

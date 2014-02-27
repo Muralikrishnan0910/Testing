@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface SegmentViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface SegmentViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UISearchDisplayDelegate, UISearchBarDelegate>
 {
     IBOutlet UITableView *tableView;
 }
+@property(nonatomic,retain)IBOutlet UILabel *uilabel;
+@property(nonatomic,retain)IBOutlet UISegmentedControl *segControl;
+-(IBAction)segmentUpdate:(id)sender;
+@property(nonatomic,retain)IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (nonatomic, retain) NSArray *searchResults;
 
 @end

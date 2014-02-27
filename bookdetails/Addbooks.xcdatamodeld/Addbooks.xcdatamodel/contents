@@ -3,15 +3,12 @@
     <entity name="BookDetails" representedClassName="BookDetails" syncable="YES">
         <attribute name="authorname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bookname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="totalpages" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="updatepage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UpdatePage" inverseName="bookdetails" inverseEntity="UpdatePage" syncable="YES"/>
-    </entity>
-    <entity name="UpdatePage" representedClassName="UpdatePage" syncable="YES">
         <attribute name="pagesread" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="bookdetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookDetails" inverseName="updatepage" inverseEntity="BookDetails" syncable="YES"/>
+        <attribute name="totalpages" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Entity" representedClassName="UpdatePage" syncable="YES"/>
     <elements>
         <element name="BookDetails" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="UpdatePage" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Entity" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

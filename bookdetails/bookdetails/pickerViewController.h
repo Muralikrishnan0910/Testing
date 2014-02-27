@@ -10,8 +10,6 @@
 #import "AppDelegate.h"
 #import "BookDetails.h"
 #import "BookRecordViewController.h"
-#import "UpdatePage.h"
-
 
 
 @interface pickerViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIActionSheetDelegate>
@@ -27,7 +25,7 @@
 - (IBAction)booklistButton:(id)sender;
 - (IBAction)doneButton:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIPickerView *bookPicker;
+
 @property (weak, nonatomic) IBOutlet UILabel *booknameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *authornameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalpagesLabel;
@@ -35,6 +33,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *pagereadTextfield;
 @property(nonatomic,strong)NSArray *booknames;
-
+@property(nonatomic,strong)NSMutableArray *bookNames;
 
 @end

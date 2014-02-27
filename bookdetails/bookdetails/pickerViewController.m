@@ -7,7 +7,8 @@
 //
 
 #import "pickerViewController.h"
-#import "UpdatePage.h"
+
+
 @interface pickerViewController ()
 @property (nonatomic,strong)NSArray* fetchedrecordsarray;
 @end
@@ -18,6 +19,7 @@
 @synthesize pagereadTextfield;
 
 @synthesize booknames=_booknames;
+@synthesize bookNames;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -90,6 +92,10 @@
     
     
     [self.dataselectactionsheet dismissWithClickedButtonIndex:0 animated:YES];
+    self.booknameLabel.text=@"";
+    self.authornameLabel.text=@"";
+    self.totalpagesLabel.text=@"";
+    self.pagereadTextfield.text=@"";
 }
 -(void)bookPickerDoneClick:(id)sender{
     
@@ -97,26 +103,25 @@
 }
 - (void)initialSetup
 {
-    //    self.booknameTextfield.text=self.selectedbook.bookname;
-    //    self.authornameTextfield.text=self.selectedbook.authorname;
-    //    self.totalpagesTextfield.text=self.selectedbook.totalpages;
     self.booknameLabel.text=self.selectedbook.bookname;
     self.authornameLabel.text=self.selectedbook.authorname;
     self.totalpagesLabel.text=self.selectedbook.totalpages;
-    NSArray* psread=[self.selectedbook.updatepage allObjects];
-    self.pagereadTextfield.text=((UpdatePage*)[psread objectAtIndex:0]).pagesread;
+    self.pagereadTextfield.text=self.selectedbook.pagesread;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:self.editButtonItem.style                                                             target:self action:@selector(doneButtonPressed)];
+//    NSArray* psread=[self.selectedbook.updat allObjects];
+//    self.pagereadTextfield.text=((UpdatePage*)[psread objectAtIndex:0]).pagesread;
+    
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:self.editButtonItem.style                                                             target:self action:@selector(doneButtonPressed)];
+//    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:self.editButtonItem.style                                                             target:self action:@selector(doneButtonPressed)];
 }
 - (void)doneButtonPressed
 {
-    //    self.selectedbook.bookname=self.booknameTextfield.text;
-    //    self.selectedbook.authorname=self.authornameTextfield.text;
-    //    self.selectedbook.totalpages=self.totalpagesTextfield.text;
-    
-    NSArray* pgnum=[self.selectedbook.updatepage allObjects];
-    ((UpdatePage*)[pgnum objectAtIndex:0]).pagesread=self.pagereadTextfield.text;
+
+//    NSArray* pgnum=[self.selectedbook.pagesread allObjects];
+//    ((BookDetails*)[pgnum objectAtIndex:0]).pagesread=self.pagereadTextfield.text;
     //  2
+    self.selectedbook.pagesread=self.pagereadTextfield.text;
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -142,16 +147,30 @@
 
 - (IBAction)doneButton:(id)sender
 {
-    //1
-    NSArray* pgnum=[self.selectedbook.updatepage allObjects];
-    ((UpdatePage*)[pgnum objectAtIndex:0]).pagesread=self.pagereadTextfield.text;
-    //  2
+    bookNames=[[NSMutableArray alloc]init];
+    
+    NSFetchRequest *fetchRequest=[[NSFetchRequest alloc]init];
+
+    NSEntityDescription *entity=[NSEntityDescription entityForName:@"BookDetails" inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
     NSError *error;
-    if (![self.managedObjectContext save:&error])
+
+    NSArray *matchingbook=[self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+ 
+    if (!matchingbook)
     {
-        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        
     }
 
+    else
+    {
+        for (int i=0; i<[matchingbook count]; i++)
+        {
+            NSManagedObject *obj=[matchingbook objectAtIndex:i];
+            [bookNames addObject:[obj valueForKey:@"pagesread"]];
+        }
+    }
 }
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -172,14 +191,15 @@
     authornameLabel.text=[NSString stringWithFormat:@"%@",bookdet.authorname];
     totalpagesLabel.text=[NSString stringWithFormat:@"%@",bookdet.totalpages];
     
-    UpdatePage *pageno1=(UpdatePage*)[[bookdet.updatepage allObjects ]objectAtIndex:0];
-    pagereadTextfield.text=[NSString stringWithFormat:@"%@",pageno1.pagesread];
+//    BookDetails *pageno1=(BookDetails*)[[bookdet.pagesread allObjects ]objectAtIndex:0];
+    pagereadTextfield.text=[NSString stringWithFormat:@"%@",bookdet.pagesread];
+     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:self.editButtonItem.style                                                             target:self action:@selector(doneButtonPressed)];
     
 }
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [self. reloadInputViews];
-//}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.pagereadTextfield reloadInputViews];
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
