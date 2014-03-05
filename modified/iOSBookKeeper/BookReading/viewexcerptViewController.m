@@ -75,9 +75,9 @@
     if (cell==nil) {
         cell = [[CustomBookCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-     Book *bookobje=[self.fetchedrecordsarray objectAtIndex:indexPath.row];
-    cell.bookNameLabel.text=bookobje.bookName;
-    cell.excerptviewtextView.text=bookobje.addnotes;
+     //Book *bookobje=[self.fetchedrecordsarray objectAtIndex:indexPath.row];
+    cell.bookNameLabel.text=self.selectedbook.bookName;
+    cell.excerptviewtextView.text=self.selectedbook.addnotes;
     return cell;
     
     
