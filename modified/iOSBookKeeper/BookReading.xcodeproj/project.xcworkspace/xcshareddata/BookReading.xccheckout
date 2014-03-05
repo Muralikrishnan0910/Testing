@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6B703FE9-F9C7-4BC9-B0CE-70A1A8844DC8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BookReading</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E274BAE2-E0DB-49FB-9D60-7B0284E2966D</key>
+		<string>https://hispark2014.visualstudio.com/DefaultCollection/_git/iOSBookKeeper</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BookReading.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E274BAE2-E0DB-49FB-9D60-7B0284E2966D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://hispark2014.visualstudio.com/DefaultCollection/_git/iOSBookKeeper</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E274BAE2-E0DB-49FB-9D60-7B0284E2966D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E274BAE2-E0DB-49FB-9D60-7B0284E2966D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSBookKeeper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
