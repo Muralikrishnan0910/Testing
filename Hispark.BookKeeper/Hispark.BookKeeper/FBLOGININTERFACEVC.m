@@ -27,7 +27,7 @@
     self.managedObjectContext = self.coredatamanagerobj.managedObjectContext;
     
     NSArray* permission = [NSArray arrayWithObjects:@"basic_info",
-                           @"email",@"publish_actions", nil];
+                           @"email",@"publish_actions",@"user_groups", nil];
     
     FBLoginView *loginView = [[FBLoginView alloc]
                               initWithPublishPermissions:permission defaultAudience:FBSessionDefaultAudienceFriends];

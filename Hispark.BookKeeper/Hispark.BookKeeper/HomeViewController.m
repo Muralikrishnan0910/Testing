@@ -113,7 +113,7 @@
 
   
     
-        addnotesviewcontrollerobj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"AddNotesViewController"];
+        addnotesviewcontrollerobj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"AddNotesViewController1"];
         [addnotesviewcontrollerobj setBookname:tempObj.bookName];
         [addnotesviewcontrollerobj setAuthorname:tempObj.authorName];
         

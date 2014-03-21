@@ -67,28 +67,90 @@
 
 - (IBAction)fbgroups:(id)sender
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"Sharing Tutorial", @"name",
-                                   @"Build great social apps and get more installs.", @"caption",
-                                   @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
-                                   @"https://developers.facebook.com/docs/ios/share/", @"link",
-                                   @"http://i.imgur.com/g3Qc1HN.png", @"picture",
-                                   nil];
-    NSString *srt5 =@"100007926850464";
-    NSString *url5=[NSString stringWithFormat:@"%@/groups",srt5];
-    [FBRequestConnection startWithGraphPath:url5
-                                 parameters:NULL
-                                 HTTPMethod:@"GET"
-                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                              if (!error) {
-                                  // Link posted successfully to Facebook
+//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   @"Sharing Tutorial", @"name",
+//                                   @"Build great social apps and get more installs.", @"caption",
+//                                   @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
+//                                   @"https://developers.facebook.com/docs/ios/share/", @"link",
+//                                   @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+//                                   nil];
+//    NSString *srt5 =@"100007926850464";
+//    NSString *url5=[NSString stringWithFormat:@"%@/groups",srt5];
+//    [FBRequestConnection startWithGraphPath:url5
+//                                 parameters:NULL
+//                                 HTTPMethod:@"GET"
+//                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+//                              if (!error) {
+//                                  // Link posted successfully to Facebook
+//                                  NSLog([NSString stringWithFormat:@"result: %@", result]);
+//                              } else {
+//                                  // An error occurred, we need to handle the error
+//                                  // See: https://developers.facebook.com/docs/ios/errors
+//                                  NSLog([NSString stringWithFormat:@"%@", error.description]);
+//                              }
+//                          }];
+  
+    
+    if ([FBSession.activeSession isOpen])
+    {
+        
+        //NSMutableDictionary *DictStore=[[NSMutableDictionary alloc]init];
+        NSString *str1=@"100007926850464";
+        NSString *url1 = [NSString stringWithFormat:@"%@/groups",str1];
+        
+        [FBRequestConnection startWithGraphPath:url1
+                                     parameters:NULL
+                                     HTTPMethod:@"GET"
+                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                  int likeCount=0;
+                                  if (!error) {
+                                      
+                                      FBGraphObject *postDetails = result;
+                                      NSLog(@"----->%@",postDetails);
+                                      // Link posted successfully to Facebook
+                                      NSMutableDictionary *dictionary = postDetails;
+                                      NSArray *dict2 =[dictionary objectForKey:@"data"];
+                                      
+                                      NSLog(@"LikesKey----->%@",[dictionary objectForKey:@"data"]);
+                                      addGroup=[[NSMutableArray alloc]init];
+                                      for (int i=0; i<dict2.count; i++) {
+                                         fbgroup *obj=[[fbgroup alloc]init];
+                                          NSLog(@"-----%@",[dict2 objectAtIndex:i] );
+                                          
+                                          NSDictionary *dict4 = [dict2 objectAtIndex:i];
+                                          NSLog(@"-----000%@",[dict4 objectForKey:@"name"]);
+                                          [obj setGroupId:[dict4 objectForKey:@"id"]];
+                                          [obj setGroupName:[dict4 objectForKey:@"name"]];
+                                          
+                                          [addGroup addObject:obj];
+                                          likeCount++;
+                                          
+                                      }
+                                      [tableView reloadData];
+                                      
+                                      NSLog(@"likescount-------->%d",likeCount);
+                                      // _likeslabel.text=likeCount;
+                                      
+                                      
+                                      
+                                  }
+                                  else {
+                                      // An error occurred, we need to handle the error
+                                      // See: https://developers.facebook.com/docs/ios/errors
+                                      NSLog([NSString stringWithFormat:@"%@", error.description]);
+                                  }
                                   NSLog([NSString stringWithFormat:@"result: %@", result]);
-                              } else {
-                                  // An error occurred, we need to handle the error
-                                  // See: https://developers.facebook.com/docs/ios/errors
-                                  NSLog([NSString stringWithFormat:@"%@", error.description]);
-                              }
-                          }];
+                                  NSLog(@"CountLikes %d", likeCount);
+                                  [_likeslabel setText:[NSString stringWithFormat:@"%dlike",likeCount]];
+                                  NSMutableDictionary * DictStore=[NSKeyedUnarchiver unarchiveObjectWithFile:DictStore];
+                                  // NSLog(@"#### %@", DictStore);
+                                  
+                              }];
+        
+        
+    }
+
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -129,15 +191,15 @@
     
     
     // Set up the cell...
-    fbgroup *_tempObj=[addGroup objectAtIndex:indexPath.row];
+    fbgroup *tempObj=[addGroup objectAtIndex:indexPath.row];
     
-    cell.textLabel.text =_tempObj.groupName ;
-    
-    
-    
-    
+    cell.textLabel.text =tempObj.groupName ;
     
     return cell;
     
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _tempObj=[addGroup objectAtIndex:indexPath.row];
+    NSLog(@"%@",_tempObj.groupId);
 }
 @end

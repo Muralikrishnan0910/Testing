@@ -15,5 +15,6 @@
 }
 - (IBAction)fbfriends:(id)sender;
 - (IBAction)fbgroups:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *likeslabel;
 
 @end
