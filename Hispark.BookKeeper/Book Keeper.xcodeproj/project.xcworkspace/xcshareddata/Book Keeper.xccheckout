@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B747DFFA-005C-4FBC-AEFF-F260955687CA</string>
+	<string>03FF3CCB-696E-4C8B-9274-BBA978B2CC17</string>
 	<key>IDESourceControlProjectName</key>
-	<string>FacebookChat</string>
+	<string>Book Keeper</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B84E2EED-9850-4FF9-A856-482E7B28AE67</key>
+		<key>4A0DBFB8-49AC-4B98-AE38-005015EB8DFA</key>
 		<string>https://github.com/Muralikrishnan0910/Testing.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FacebookChat-master/FacebookChat.xcodeproj/project.xcworkspace</string>
+	<string>Hispark.BookKeeper/Book Keeper.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B84E2EED-9850-4FF9-A856-482E7B28AE67</key>
+		<key>4A0DBFB8-49AC-4B98-AE38-005015EB8DFA</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B84E2EED-9850-4FF9-A856-482E7B28AE67</string>
+	<string>4A0DBFB8-49AC-4B98-AE38-005015EB8DFA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B84E2EED-9850-4FF9-A856-482E7B28AE67</string>
+			<string>4A0DBFB8-49AC-4B98-AE38-005015EB8DFA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Testing</string>
 		</dict>

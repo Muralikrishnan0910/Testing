@@ -90,7 +90,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" patternImage="1A570965-B1FF-419F-9658-D95CEB1BDB12" colorSpace="pattern"/>
+                                            <color key="highlightedColor" patternImage="8DEC70AE-8E7C-4A13-872E-E368AA8188B1" colorSpace="pattern"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addBook.png" translatesAutoresizingMaskIntoConstraints="NO" id="MCD-2e-Iac">
                                             <rect key="frame" x="12" y="9" width="30" height="30"/>
@@ -1280,7 +1280,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1A570965-B1FF-419F-9658-D95CEB1BDB12" width="256" height="256">
+        <image name="8DEC70AE-8E7C-4A13-872E-E368AA8188B1" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
